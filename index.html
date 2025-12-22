@@ -32,14 +32,12 @@
     a{ color: var(--accent); text-decoration: none; }
     a:hover{ text-decoration: underline; }
 
-    /* Layout */
     .container{
       width: min(1080px, calc(100% - 40px));
       margin: 0 auto;
       padding: 24px 0 80px;
     }
 
-    /* Top nav */
     .nav{
       position: sticky;
       top: 0;
@@ -60,7 +58,7 @@
     .brand{
       font-weight: 700;
       letter-spacing: 0.2px;
-      font-size: 14px; /* small name top-left */
+      font-size: 14px; 
       color: var(--text);
       display: flex;
       align-items: center;
@@ -94,7 +92,6 @@
       text-decoration: none;
     }
 
-    /* Hero */
     .hero{
       margin-top: 26px;
       display: grid;
@@ -170,7 +167,6 @@
       background: rgba(122,162,255,0.12);
     }
 
-    /* Right mini profile */
     .hero-right{
       padding: 18px;
       display: grid;
@@ -184,7 +180,7 @@
     }
     .avatar{
       width: 72px; height: 72px;
-      border-radius: 16px; /* small picture near top */
+      border-radius: 16px; 
       overflow: hidden;
       border: 1px solid var(--line);
       background: rgba(255,255,255,0.03);
@@ -216,7 +212,6 @@
     }
     .mini b{ color: var(--text); font-weight: 600; }
 
-    /* Sections */
     section{
       margin-top: 28px;
       padding: 22px;
@@ -270,13 +265,11 @@
       line-height: 1.7;
     }
 
-    /* Simple lists */
     .list{
       display: grid;
       gap: 12px;
     }
 
-    /* Footer */
     footer{
       margin-top: 34px;
       color: var(--muted);
@@ -284,7 +277,6 @@
       text-align: center;
     }
 
-    /* Responsive */
     @media (max-width: 860px){
       .hero{ grid-template-columns: 1fr; }
       .grid-2{ grid-template-columns: 1fr; }
@@ -295,12 +287,11 @@
 </head>
 
 <body>
-  <!-- Top Navigation -->
   <div class="nav">
     <div class="nav-inner">
       <div class="brand">
         <span class="brand-dot"></span>
-        <span>Shahrzad</span>
+        <span>Shahrzad Dehghani</span>
       </div>
 
       <nav class="menu">
