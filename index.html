@@ -1,36 +1,565 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title> Shahrzad | Portfolio </title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shahrzad | Portfolio</title>
+
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      max_width: 900px;
-      margin: 40px auto;
-      padding: 0 20px; 
-      line-height: 1.6;
-      color: #222;
+    :root{
+      --bg: #0b0f14;
+      --panel: #0f1620;
+      --text: #e9eef5;
+      --muted: #a9b4c0;
+      --line: rgba(255,255,255,0.08);
+      --accent: #7aa2ff;
+      --accent2: #86efac;
+      --shadow: 0 10px 30px rgba(0,0,0,0.35);
+      --radius: 18px;
     }
-    h1, h2, h3 {
-      color: #111;
+
+    *{ box-sizing: border-box; }
+    html{ scroll-behavior: smooth; }
+    body{
+      margin: 0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Helvetica Neue", sans-serif;
+      color: var(--text);
+      background: radial-gradient(1200px 600px at 20% -10%, rgba(122,162,255,0.20), transparent 60%),
+                  radial-gradient(900px 500px at 90% 10%, rgba(134,239,172,0.12), transparent 55%),
+                  var(--bg);
     }
-    hr {
-      margin: 40px 0;
+
+    a{ color: var(--accent); text-decoration: none; }
+    a:hover{ text-decoration: underline; }
+
+    /* Layout */
+    .container{
+      width: min(1080px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 24px 0 80px;
     }
-    a {
-      color: #0066cc;
+
+    /* Top nav */
+    .nav{
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(10px);
+      background: rgba(11,15,20,0.65);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav-inner{
+      width: min(1080px, calc(100% - 40px));
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 0;
+      gap: 14px;
+    }
+    .brand{
+      font-weight: 700;
+      letter-spacing: 0.2px;
+      font-size: 14px; /* small name top-left */
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      white-space: nowrap;
+    }
+    .brand-dot{
+      width: 8px; height: 8px; border-radius: 999px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      box-shadow: 0 0 0 4px rgba(122,162,255,0.10);
+    }
+
+    .menu{
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+    .menu a{
+      color: var(--muted);
+      font-size: 13px;
+      padding: 8px 10px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+    }
+    .menu a:hover{
+      color: var(--text);
+      border-color: var(--line);
+      background: rgba(255,255,255,0.03);
       text-decoration: none;
-      font-weight: bold;
     }
-    .project {
-      margin-bottom: 30px;
+
+    /* Hero */
+    .hero{
+      margin-top: 26px;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 18px;
+      align-items: start;
+    }
+    .card{
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .hero-left{
+      padding: 22px;
+    }
+    .kicker{
+      color: var(--muted);
+      font-size: 13px;
+      letter-spacing: 0.4px;
+      text-transform: uppercase;
+      margin: 0 0 10px;
+    }
+    .headline{
+      margin: 0 0 10px;
+      font-size: 30px;
+      line-height: 1.15;
+      letter-spacing: -0.4px;
+    }
+    .subhead{
+      margin: 0 0 18px;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.7;
+    }
+    .chips{
+      display: flex; flex-wrap: wrap; gap: 10px;
+      margin: 14px 0 0;
+    }
+    .chip{
+      font-size: 12px;
+      color: var(--text);
+      padding: 7px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.02);
+    }
+    .cta-row{
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 18px;
+    }
+    .btn{
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 12px;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.03);
+      color: var(--text);
+      font-size: 13px;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .btn:hover{
+      background: rgba(255,255,255,0.06);
+      text-decoration: none;
+    }
+    .btn.primary{
+      border-color: rgba(122,162,255,0.35);
+      background: rgba(122,162,255,0.12);
+    }
+
+    /* Right mini profile */
+    .hero-right{
+      padding: 18px;
+      display: grid;
+      gap: 14px;
+    }
+    .profile{
+      display: grid;
+      grid-template-columns: 72px 1fr;
+      gap: 14px;
+      align-items: center;
+    }
+    .avatar{
+      width: 72px; height: 72px;
+      border-radius: 16px; /* small picture near top */
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.03);
+    }
+    .avatar img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .profile h3{
+      margin: 0 0 4px;
+      font-size: 15px;
+    }
+    .profile p{
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.5;
+    }
+    .mini{
+      border-top: 1px solid var(--line);
+      padding-top: 12px;
+      display: grid;
+      gap: 8px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.6;
+    }
+    .mini b{ color: var(--text); font-weight: 600; }
+
+    /* Sections */
+    section{
+      margin-top: 28px;
+      padding: 22px;
+    }
+    .section-title{
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 14px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--line);
+    }
+    .section-title h2{
+      margin: 0;
+      font-size: 16px;
+      letter-spacing: 0.2px;
+    }
+    .section-title span{
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .grid-2{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .item{
+      padding: 14px;
+      border-radius: 16px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.02);
+    }
+    .item h3{
+      margin: 0 0 6px;
+      font-size: 14px;
+    }
+    .meta{
+      color: var(--muted);
+      font-size: 12px;
+      margin: 0 0 10px;
+      line-height: 1.5;
+    }
+    .item ul{
+      margin: 0;
+      padding-left: 18px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    /* Simple lists */
+    .list{
+      display: grid;
+      gap: 12px;
+    }
+
+    /* Footer */
+    footer{
+      margin-top: 34px;
+      color: var(--muted);
+      font-size: 12px;
+      text-align: center;
+    }
+
+    /* Responsive */
+    @media (max-width: 860px){
+      .hero{ grid-template-columns: 1fr; }
+      .grid-2{ grid-template-columns: 1fr; }
+      .menu{ gap: 8px; }
+      .headline{ font-size: 26px; }
     }
   </style>
-
 </head>
 
 <body>
-  <h1> Shahrzad Dehghani</h1>
+  <!-- Top Navigation -->
+  <div class="nav">
+    <div class="nav-inner">
+      <div class="brand">
+        <span class="brand-dot"></span>
+        <span>Shahrzad</span>
+      </div>
+
+      <nav class="menu">
+        <a href="#about">About</a>
+        <a href="#education">Education</a>
+        <a href="#projects">Projects</a>
+        <a href="#courses">Courses</a>
+        <a href="#publications">Publications</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </div>
+
+  <div class="container">
+    <!-- HERO -->
+    <div class="hero">
+      <div class="card hero-left" id="about">
+        <p class="kicker">Portfolio</p>
+        <h1 class="headline">PhD Researcher in Optoelectronics</h1>
+        <p class="subhead">
+          I work on <b>data-driven inverse design</b> in nanophotonics using reflection spectra,
+          deep learning (autoencoders, cVAEs, GANs), and physics-informed validation (tandem networks).
+          I’m interested in roles spanning <b>ML for photonics</b>, inverse problems, and scientific ML.
+        </p>
+
+        <div class="cta-row">
+          <!-- Put your CV file in the repo root and name it CV.pdf -->
+          <a class="btn primary" href="CV.pdf">Download CV</a>
+          <a class="btn" href="https://github.com/shahrzaddg" target="_blank" rel="noreferrer">GitHub</a>
+          <!-- Optional: LinkedIn / Google Scholar -->
+          <a class="btn" href="#" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a class="btn" href="#" target="_blank" rel="noreferrer">Google Scholar</a>
+        </div>
+
+        <div class="chips">
+          <span class="chip">Inverse Design</span>
+          <span class="chip">Nanophotonics</span>
+          <span class="chip">PyTorch</span>
+          <span class="chip">cVAE / GAN</span>
+          <span class="chip">Tandem Networks</span>
+          <span class="chip">RCWA</span>
+        </div>
+      </div>
+
+      <div class="card hero-right">
+        <div class="profile">
+          <div class="avatar">
+            <!-- Put your image in the repo root or /assets/ and change the path -->
+            <img src="assets/profile.jpg" alt="Profile photo"/>
+          </div>
+          <div>
+            <h3>Shahrzad</h3>
+            <p>Solingen, NRW, Germany<br/>Optoelectronics • ML for Photonics</p>
+          </div>
+        </div>
+
+        <div class="mini">
+          <div><b>Focus:</b> reflection spectra → structure prediction</div>
+          <div><b>Methods:</b> AE, cVAE, WGAN-GP, cross-validation</div>
+          <div><b>Tools:</b> Python, PyTorch, Optuna, MATLAB, RCWA</div>
+          <div><b>Open to:</b> Research / ML Engineer roles</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- EDUCATION -->
+    <section class="card" id="education">
+      <div class="section-title">
+        <h2>Education</h2>
+        <span>Academic background</span>
+      </div>
+
+      <div class="list">
+        <div class="item">
+          <h3>PhD in Optoelectronics</h3>
+          <p class="meta">University / Institute Name • 20XX – Present • Germany</p>
+          <ul>
+            <li>Research: data-driven inverse design of hybrid waveguide gratings using reflection spectra.</li>
+            <li>Deep learning pipelines: autoencoders, conditional VAEs, tandem networks, GAN variants.</li>
+          </ul>
+        </div>
+
+        <div class="item">
+          <h3>MSc in …</h3>
+          <p class="meta">University Name • 20XX – 20XX</p>
+          <ul>
+            <li>Thesis: …</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="card" id="projects">
+      <div class="section-title">
+        <h2>Projects</h2>
+        <span>Selected work with links</span>
+      </div>
+
+      <div class="grid-2">
+        <div class="item">
+          <h3>Data-Driven Inverse Design of Hybrid Waveguide Gratings</h3>
+          <p class="meta">Autoencoder + cVAE + Tandem Network • PyTorch</p>
+          <ul>
+            <li>Predict structural parameters from reflection spectra (2D matrices).</li>
+            <li>Latent compression (e.g., 401×91 → latent vector) and inverse prediction.</li>
+            <li>Evaluation: MAE/MSE and R² per parameter; 5-fold CV.</li>
+          </ul>
+          <p class="meta" style="margin-top:10px;">
+            🔗 <a href="https://github.com/shahrzaddg/YOUR-INVERSE-DESIGN-REPO" target="_blank" rel="noreferrer">Repository</a>
+          </p>
+        </div>
+
+        <div class="item">
+          <h3>Sensitivity Maps via Central Differences</h3>
+          <p class="meta">Post-processing spectra • Python</p>
+          <ul>
+            <li>Compute RMS absolute sensitivity and RMS relative sensitivity for each parameter.</li>
+            <li>Visualize sensitivity vs wavelength/angle; export figures for analysis.</li>
+          </ul>
+          <p class="meta" style="margin-top:10px;">
+            🔗 <a href="#" target="_blank" rel="noreferrer">Repository (coming soon)</a>
+          </p>
+        </div>
+
+        <div class="item">
+          <h3>Autoencoder Denoising for Reflection Data</h3>
+          <p class="meta">Noise-robust latent features • PyTorch</p>
+          <ul>
+            <li>Train AE with noise injection; use latent as conditioning signal for downstream models.</li>
+            <li>Hyperparameter tuning with Optuna.</li>
+          </ul>
+          <p class="meta" style="margin-top:10px;">
+            🔗 <a href="#" target="_blank" rel="noreferrer">Repository (coming soon)</a>
+          </p>
+        </div>
+
+        <div class="item">
+          <h3>Experimental Automation (MATLAB)</h3>
+          <p class="meta">Camera + power meters + ESP32 • Real-time acquisition</p>
+          <ul>
+            <li>Optimized script for speed and efficiency; synchronized hardware control.</li>
+          </ul>
+          <p class="meta" style="margin-top:10px;">
+            🔗 <a href="#" target="_blank" rel="noreferrer">Repository (optional)</a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- COURSES -->
+    <section class="card" id="courses">
+      <div class="section-title">
+        <h2>Courses</h2>
+        <span>Relevant coursework & training</span>
+      </div>
+
+      <div class="grid-2">
+        <div class="item">
+          <h3>Machine Learning / Deep Learning</h3>
+          <ul>
+            <li>Neural networks, optimization, regularization</li>
+            <li>Autoencoders, VAEs, GANs</li>
+          </ul>
+        </div>
+
+        <div class="item">
+          <h3>Nanophotonics / Electromagnetics</h3>
+          <ul>
+            <li>Waveguides, gratings, plasmonics</li>
+            <li>RCWA / numerical methods</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- PUBLICATIONS -->
+    <section class="card" id="publications">
+      <div class="section-title">
+        <h2>Publications</h2>
+        <span>Selected papers</span>
+      </div>
+
+      <div class="list">
+        <div class="item">
+          <h3>Data-Driven Inverse Design of Hybrid Waveguide Gratings using Reflection Spectra via Tandem Networks and Conditional VAEs</h3>
+          <p class="meta">MDPI <em>Optics</em> • 2025</p>
+          <p class="meta">
+            <!-- Add DOI link when available -->
+            <a href="#" target="_blank" rel="noreferrer">Paper link</a>
+            &nbsp;•&nbsp;
+            <a href="#" target="_blank" rel="noreferrer">Preprint</a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="card" id="skills">
+      <div class="section-title">
+        <h2>Skills</h2>
+        <span>Tools & competencies</span>
+      </div>
+
+      <div class="grid-2">
+        <div class="item">
+          <h3>Programming</h3>
+          <ul>
+            <li>Python (PyTorch, NumPy, Matplotlib)</li>
+            <li>MATLAB (automation, simulation)</li>
+            <li>Git / GitHub</li>
+          </ul>
+        </div>
+
+        <div class="item">
+          <h3>ML / Research</h3>
+          <ul>
+            <li>Inverse problems, generative models (cVAE, GANs)</li>
+            <li>Hyperparameter tuning (Optuna)</li>
+            <li>Evaluation: MSE/MAE/R², cross-validation</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="card" id="contact">
+      <div class="section-title">
+        <h2>Contact</h2>
+        <span>Let’s connect</span>
+      </div>
+
+      <div class="list">
+        <div class="item">
+          <h3>Email</h3>
+          <p class="meta">your.email@example.com</p>
+        </div>
+
+        <div class="item">
+          <h3>Links</h3>
+          <p class="meta">
+            <a href="https://github.com/shahrzaddg" target="_blank" rel="noreferrer">GitHub</a>
+            &nbsp;•&nbsp;
+            <a href="#" target="_blank" rel="noreferrer">LinkedIn</a>
+            &nbsp;•&nbsp;
+            <a href="#" target="_blank" rel="noreferrer">Google Scholar</a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      © <span id="year"></span> Shahrzad • Built with GitHub Pages
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
