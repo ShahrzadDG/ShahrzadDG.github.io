@@ -327,7 +327,6 @@
     line-height: 1;
   }
   
-  /* Small bullets (nested list) */
   .small-bullets {
     margin-top: 0.4em;
     margin-left: 1.2em;
@@ -338,6 +337,9 @@
     font-size: 0.9rem;
   }
 
+.grid-2 + .grid-2 {
+  margin-top: 14px;
+}
     
   </style>
 </head>
@@ -647,14 +649,17 @@
         
         <div class="item">
           <h3>Realtive courses at the Institute for Research in Fundamental Science, IPM, Tehran, Iran</h3>
-          <ul class="big-bullets"> 
-            Data Science Workshop series • [March.2019 - June.2019]
-          </ul>
-          <ul>
-            <li>Preliminary statistical analysis to mine a data set</li>
-            <li>The ability of programming languages to deal with analytical mathematics (SciPy, ISLR-python)</li>
-            <li>ML with Tensorflow, signal/image processing & data visualization</li>
-            <li>A complete data analysis project was assigned at the end of the course. Our team analyzed the GDELT Database for the final project.</li>
+          <ul class="big-bullets">
+            <li>
+              Data Science Workshop series • <span class="meta-inline">[March 2019 - June 2019]</span>
+        
+              <ul class="small-bullets">
+                <li>Preliminary statistical analysis to mine a data set</li>
+                <li>The ability of programming languages to deal with analytical mathematics (SciPy, ISLR-python)</li>
+                <li>ML with Tensorflow, signal/image processing &amp; data visualization</li>
+                <li>A complete data analysis project was assigned at the end of the course. Our team analyzed the GDELT Database for the final project.</li>
+              </ul>
+            </li>
           </ul>
         </div>
 
