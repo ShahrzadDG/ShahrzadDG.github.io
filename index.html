@@ -305,6 +305,41 @@
         grid-template-columns: 1fr;
       }
     }
+  
+  .big-bullets {
+    list-style: none;
+    padding-left: 0;
+  }
+  
+  .big-bullets > li {
+    position: relative;
+    padding-left: 1.5em;
+    margin-bottom: 0.8em;
+    font-size: 1rem;
+  }
+  
+  /* Custom large bullet */
+  .big-bullets > li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 1.6em;   /* 👈 bigger bullet */
+    line-height: 1;
+    color: #000;
+  }
+  
+  /* Small bullets (nested list) */
+  .small-bullets {
+    margin-top: 0.4em;
+    margin-left: 1.2em;
+    list-style-type: disc;
+  }
+  
+  .small-bullets li {
+    font-size: 0.9rem;
+  }
+
     
   </style>
 </head>
