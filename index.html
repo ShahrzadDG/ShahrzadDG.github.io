@@ -536,26 +536,27 @@
           <li class="method-step">
             <span class="step-num">1.</span>
             <span class="step-text">
-              Tandem Network
-            </span>
+              Tandem Network: t combines a pre-trained forward model with an inverse network. The inverse model predicts the structural parameters from the latent representation of the reflection spectra. The predicted structural parameters are then used as input to the pre-trained forward model to reconstruct the latent representation of the reflection spectra. During training, the inverse model is optimized by minimizing the error between the predicted and ground-truth latent representations.
           </li>
-        <ul class="method-block">
+
           <li class="method-step">
             <span class="step-num">2.</span>
             <span class="step-text">
-              conditional Variational Autoencoder (cVAE)
+              conditional Variational Autoencoder (cVAE): It uses spectral latent representations as the condition to generate probable structural parameters.
             </span>
           </li>
         </ul>
 
-        <!-- </ul> -->
+        </ul>
 
-              
-        <!-- <ul>
-          <li>Latent compression (e.g., 401×91 → latent vector)</li>
-          <li> and inverse prediction.</li>
-          <li>Evaluation: MAE/MSE and R² per parameter; 5-fold CV.</li>
-        </ul> -->
+        <ul>
+          <li>Results: The Tandem model predicts a single, deterministic set of structural parameters for a given reflection spectrum. In contrast, the cVAE, as a generative model, can produce multiple valid design solutions.</li>
+        </ul>
+        
+        <ul>
+          <li>Note: Hyperparameter tuning is done using the Optuna library</li>
+          <li>Note: High-performance cluster computing (PLEIADES) at the University of Wuppertal was used for data generation as well as model training and evaluation.</li>
+        </ul>
         <p class="meta" style="margin-top:10px;">
           🔗 <a href="https://github.com/ShahrzadDG/Data-Driven-Inverse-Design-of-Hybrid-Waveguide-Gratings-Using-Reflection-Spectra" target="_blank" rel="noreferrer">Repository</a>
         </p>
