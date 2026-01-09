@@ -494,64 +494,34 @@
         <p class="meta">Autoencoder + cVAE + Tandem Network • Python, PyTorch</p>
         <ul>
           <li>Goal: Develop a machine learning framework to predict structural parameters of hybrid waveguide gratings directly from their simulated or measured full reflection spectra. Traditionally, designing such optical nano-structures requires extensive parameter sweeps and/or iterative electromagnetic simulations, which is computationally expensive and slow. This project replaces that with a fast, accurate inverse design approach using deep learning. The framework is designed to be robust to noisy reflection spectra, providing stable and accurate parameter prediction under realistic experimental measurement conditions.</li>
-          <li>Method:</li>
-        </ul>
-        <ul class="method-block">
-          <li class="method-step">
-            <span class="step-num">1.</span>
-            <span class="step-text">
-              Data Generation & Simulation: Reflection spectra generation using Rigorous Coupled Wave Analysis (RCWA) simulation across the visible range and a complete span of incident angles. Dataset includes wide parameter space of hybrid waveguide gratings and their corresponding reflection spectra.
-            </span>
-          </li>
-        </ul>
-        <ul class="method-block">
-          <li class="method-step">
-            <span class="step-num">2.</span>
-            <span class="step-text">
-              Autoencoder for dimension reduction: An autoencoder model is trained to compress 2D reflection spectra into a lower-dimensional latent representation. 
-              The AE model captures the essential spectral features while it reduces complexity. 
-              It is also the main denoising component of the framework. It learns stable latent space from the noisy reflection spectra. 
-              The latent vectors are later used as inputs to subsequent models, ensure that subsequent models are resilient to the noise and fluctuations typical of real-world measurements.
-            </span>
-          </li>
-        </ul>
-
-        <ul class="method-block">
-          <li class="method-step">
-            <span class="step-num">3.</span>
-            <span class="step-text">
-              Forward model: A forward neural network learns the mapping from geometry (structural parameters) to spectral latent representation (later vectors from the AE model).
-            </span>
-          </li>
+          <li>Results:</li>
         </ul>
 
         <ul class="method-block">
           <li class="method-step">
             <span class="step-num">4.</span>
             <span class="step-text">
-              Inverse models: Tandem Network and conditional Variational Autoencoder (cVAE)
+              Both models, Tandem Network and conditional Variational Autoencoder (cVAE), are trained on noisy reflection spectra to mimic real measurements.
             </span>
           </li>
         <ul class="method-block">
           <li class="method-step">
             <span class="step-num">1.</span>
             <span class="step-text">
-              Tandem Network: t combines a pre-trained forward model with an inverse network. The inverse model predicts the structural parameters from the latent representation of the reflection spectra. The predicted structural parameters are then used as input to the pre-trained forward model to reconstruct the latent representation of the reflection spectra. During training, the inverse model is optimized by minimizing the error between the predicted and ground-truth latent representations.
+              On noise free test dataset, the mean absolute errors (MAE) of predicted silver thickness and grating period are less than 1 nm. MAE of polymer (OrmoCore) layer thickness lies between 13-15 nm. The sensitivity of reflection spectra to each structural parameter was analyzed. It showed that the spectra is significantly less sensitive to variations in OrmoCore thickness compared to the silver thickness and grating period, which explains higher prediction error observed for the polymer layer. In addition, Tandem network yield lower MAE and MSE on noise-free dataset than cVAE. 
           </li>
 
           <li class="method-step">
             <span class="step-num">2.</span>
             <span class="step-text">
-              conditional Variational Autoencoder (cVAE): It uses spectral latent representations as the condition to generate probable structural parameters.
-            </span>
+              As σ increases, MAE increases gradually. Models remain robust up to moderate noise (σ ≲ 0.15). Even under strong noise levels (up to 𝜎 ∼ 0.2), the MAE for silver thickness and period remains below 3 nm. At higher noise levels (σ > 0.3) cVAE outperforms the Tandem network. Dominant source of error in all noise levels is OrmoCore thickness because spectra are least sensitive to this parameter.
           </li>
+
+          
+        </ul>
         </ul>
 
-        </ul>
 
-        <ul>
-          <li>Results: The Tandem model predicts a single, deterministic set of structural parameters for a given reflection spectrum. In contrast, the cVAE, as a generative model, can produce multiple valid design solutions.</li>
-        </ul>
         
         <ul>
           <li>Note: Hyperparameter tuning is done using the Optuna library</li>
