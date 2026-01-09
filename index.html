@@ -494,31 +494,42 @@
         <p class="meta">Autoencoder + cVAE + Tandem Network • Python, PyTorch</p>
         <ul>
           <li>Goal: Develop a machine learning framework to predict structural parameters of hybrid waveguide gratings directly from their simulated or measured full reflection spectra. Traditionally, designing such optical nano-structures requires extensive parameter sweeps and/or iterative electromagnetic simulations, which is computationally expensive and slow. This project replaces that with a fast, accurate inverse design approach using deep learning. The framework is designed to be robust to noisy reflection spectra, providing stable and accurate parameter prediction under realistic experimental measurement conditions.</li>
-          <li>Results:</li>
+          <li>Results: Both models, Tandem Network and conditional Variational Autoencoder (cVAE), are trained on noisy reflection spectra to mimic real measurements.</li>
         </ul>
 
-        <ul class="method-block">
-          <li class="method-step">
-            <span class="step-num">4.</span>
-            <span class="step-text">
-              Both models, Tandem Network and conditional Variational Autoencoder (cVAE), are trained on noisy reflection spectra to mimic real measurements.
-            </span>
-          </li>
         <ul class="method-block">
           <li class="method-step">
             <span class="step-num">1.</span>
             <span class="step-text">
               On noise free test dataset, the mean absolute errors (MAE) of predicted silver thickness and grating period are less than 1 nm. MAE of polymer (OrmoCore) layer thickness lies between 13-15 nm. The sensitivity of reflection spectra to each structural parameter was analyzed. It showed that the spectra is significantly less sensitive to variations in OrmoCore thickness compared to the silver thickness and grating period, which explains higher prediction error observed for the polymer layer. In addition, Tandem network yield lower MAE and MSE on noise-free dataset than cVAE. 
+            </span>
           </li>
-
+        </ul>
+        <ul class="method-block">
           <li class="method-step">
             <span class="step-num">2.</span>
             <span class="step-text">
               As σ increases, MAE increases gradually. Models remain robust up to moderate noise (σ ≲ 0.15). Even under strong noise levels (up to 𝜎 ∼ 0.2), the MAE for silver thickness and period remains below 3 nm. At higher noise levels (σ > 0.3) cVAE outperforms the Tandem network. Dominant source of error in all noise levels is OrmoCore thickness because spectra are least sensitive to this parameter.
+            </span>
+          </li>
+        </ul>
+
+        
+        <!-- <ul class="method-block">
+          <li class="method-step">
+            <span class="step-num">1.</span>
+            
+            <span class="step-text">
+          </li>
+        </ul>
+        
+          <li class="method-step">
+            <span class="step-num">2.</span>
+            <span class="step-text">
           </li>
 
           
-        </ul>
+        </ul> -->
         </ul>
 
 
