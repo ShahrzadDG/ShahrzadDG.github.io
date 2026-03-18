@@ -553,8 +553,8 @@
             <b>Part 1 — Data Analysis (Business insights): brand benchmarking, price-segment analysis, and review-text mining</b>
             <ul>
               <li>Worked with a large-scale dataset (~6.8M reviews, ~800k products, ~23k brands) to understand the jewelry market on Amazon.</li>
-              <li>Cleaned and structured the data to analyze products, brands, prices, ratings, and review text.</li>
-              <li>Compared brands performances: </li>
+              <li>Cleaned and structured the data to analyze products, brands, prices, ratings, and review texts.</li>
+              <li>Compared brand performances: </li>
                 <ul>
                   <li>Aggregated product ratings for each brand, used a weighted score to avoid bias from products with very few reviews.</li>
                   <li>Ranked ~11k+ brands based on both rating quality and review volume.</li>
@@ -566,12 +566,12 @@
               </ul>
               <li>Explored price behaviour:</li>
               <ul>
-                <li>Analyzed full price distribution (highly skewed, long tail up to ~33k).</li> 
+                <li>Analyzed full price distribution (highly skewed, long tail up to ~33k $).</li> 
                 <li>Segmented products into cheap / mid / luxury.</li>
               </ul>
               <li>Investigated relationship between price and satisfaction:</li>
               <ul>
-                <li>Tested whether expensive brands are actually better rated?</li>
+                <li>Tested whether expensive brands are actually better rated.</li>
                 <li>Built different versions of a “value for money” score (including log and z-score normalization).</li>
               </ul>
               <li>Performed review text analysis (NLP):</li>
@@ -585,10 +585,15 @@
               <li><b>Part of the results:</b></li>
               <ul>
               <li>Higher price does not consistently lead to higher ratings. </li>
+              <ul>
+                <li>When comparing average ratings across price segments over time, expensive products are not clearly better rated than cheaper ones.</li>
+                <li>Customer satisfaction seems to depend more on expectations and perceived value than on price itself.</li>  
+              </ul>
               <li>Customer complaints follow clear patterns across price segments:</li>
                 <ul>
                   <li>“Quality problems” are more common in cheap products.</li>
                   <li>Some issues (like defects) appear more evenly across segments.</li>
+                  <li>Cheap products struggle more with quality/durability but expectation mismatch exists in all price levels.</li>
                 </ul>
               <li>People mention price and affordability much more in cheaper products, while it comes up less for higher-priced items. It shows that customers focus more on cost in the low-price segment.</li>
               <li>Brand rankings are highly dynamic over time. Top-ranked brands change frequently.</li>
