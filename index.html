@@ -494,10 +494,10 @@
       <div class="item">
         <h3>Data-Driven Inverse Design of Hybrid Waveguide Gratings Using Reflection Spectra via Tandem Networks and Conditional VAEs</h3>
         <p class="meta">Autoencoder + cVAE + Tandem Network • Python, PyTorch</p>
-        <ul>
-          <li><b>Goal:</b> Developing a machine learning framework to predict structural parameters of hybrid waveguide gratings directly from their simulated or measured full reflection spectra. Traditionally, designing such optical nano-structures requires extensive parameter sweeps and/or iterative electromagnetic simulations, which is computationally expensive and slow. This project replaces that with a fast, accurate inverse design approach using deep learning. The framework is designed to be robust to noisy reflection spectra, providing stable and accurate parameter prediction under realistic experimental measurement conditions.</li>
-          <li><b>Results:</b> Both models, Tandem Network and conditional Variational Autoencoder (cVAE), are trained on noisy reflection spectra to mimic real measurements.</li>
-        </ul>
+        
+        <li><b>Goal:</b> Developing a machine learning framework to predict structural parameters of hybrid waveguide gratings directly from their simulated or measured full reflection spectra. Traditionally, designing such optical nano-structures requires extensive parameter sweeps and/or iterative electromagnetic simulations, which is computationally expensive and slow. This project replaces that with a fast, accurate inverse design approach using deep learning. The framework is designed to be robust to noisy reflection spectra, providing stable and accurate parameter prediction under realistic experimental measurement conditions.</li>
+        <li><b>Results:</b> Both models, Tandem Network and conditional Variational Autoencoder (cVAE), are trained on noisy reflection spectra to mimic real measurements.</li>
+      
         <ul>
           <li>On a noise free test dataset, the mean absolute errors (MAE) of predicted silver thickness and grating period are less than 1 nm. MAE of polymer (OrmoCore) layer thickness lies between 13-15 nm. The sensitivity of reflection spectra to each structural parameter was analyzed. The analysis showed that the spectra is significantly less sensitive to variations in OrmoCore thickness compared to the silver thickness and grating period, which explains the higher prediction error observed for the polymer layer. In addition, the Tandem network yields lower MAE and MSE on the noise-free dataset than cVAE. </li>
           <li>As σ increases, MAE increases gradually. Models remain robust up to moderate noise (σ ≲ 0.15). Even under strong noise levels (up to 𝜎 ∼ 0.2), the MAE for silver thickness and period remains below 3 nm. At higher noise levels (σ > 0.3) cVAE outperforms the Tandem network. The dominant source of error in all noise levels is OrmoCore thickness because spectra are least sensitive to this parameter.</li>
@@ -521,10 +521,10 @@
         </ul> -->
         <!-- </ul> -->
         
-        <ul>
-          <li>Note: Hyperparameter tuning is performed using the Optuna library.</li>
-          <li>Note: High-performance cluster computing (PLEIADES) at the University of Wuppertal was used for data generation as well as model training and evaluation.</li>
-        </ul>
+        
+        <li>Note: Hyperparameter tuning is performed using the Optuna library.</li>
+        <li>Note: High-performance cluster computing (PLEIADES) at the University of Wuppertal was used for data generation as well as model training and evaluation.</li>
+      
         <p class="meta" style="margin-top:10px;">
           🔗 <a href="https://github.com/ShahrzadDG/Data-Driven-Inverse-Design-of-Hybrid-Waveguide-Gratings-Using-Reflection-Spectra" target="_blank" rel="noreferrer">Repository</a>
           &nbsp;•&nbsp; <a href="https://www.mdpi.com/2673-3269/6/4/61" target="_blank" rel="noreferrer">Paper link</a>
