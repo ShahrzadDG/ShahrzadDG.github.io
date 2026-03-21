@@ -532,10 +532,10 @@
         <h3>Master Thesis</h3>
         <p class="meta">Simulations and data ananlysis • C++ & Python</p>
         <ul>
-          <li><b>Goal:</b>In my Master’s thesis, “Role of Gas Expulsion Time on Cluster Expansion,” I investigated how early gas removal influences the dynamical evolution of young star clusters and the survival of protoplanetary discs using large-scale N-body simulations. </li>
+          <li><b>Goal:</b> In my Master’s thesis, “Role of Gas Expulsion Time on Cluster Expansion,” I investigated how early gas removal influences the dynamical evolution of young star clusters and the survival of protoplanetary discs using large-scale N-body simulations. </li>
           <li><b>Method:</b> I implemented and modified the high-performance astrophysical code NBODY6++ to model clusters ranging from 200 to 10,000 stars under different star formation efficiencies and gas dispersal timescales. </li>
           <li><b>Results:</b> The study shows that slower gas expulsion leads to higher bound star fractions but increased disc-size reduction. </li>
-          <li>Note: This work combines computational physics, numerical simulation, and statistical analysis to derive physically meaningful consepts about planet-forming environments. The project required high-performance computing, large dataset analysis of simulation outputs, and interpretation of complex dynamical systems.</li>
+          <li>Note: This work combines computational physics, numerical simulation, and statistical analysis to derive physically meaningful concepts about planet-forming environments. The project required high-performance computing, large dataset analysis of simulation outputs, and interpretation of complex dynamical systems.</li>
         </ul>
         <!-- <p class="meta" style="margin-top:10px;">
           🔗 <a href="#" target="_blank" rel="noreferrer">Repository (coming soon)</a>
@@ -547,21 +547,20 @@
         <p class="meta">From business analytics to LLM-driven insight generation • Python • Independent Project</p>
         <ul>
           <li>
-            <b>Goal:</b> Analyze Amazon jewelry reviews to uncover customer satisfaction drivers, brand performance, and product issues using both data analytics and NLP/LLM techniques.
+            <b>Goal:</b> Analyzing Amazon jewelry reviews to uncover customer satisfaction drivers, brands performances, and product issues using both data analytics and NLP/LLM techniques.
           </li>
           <li>
-            <b>Part 1 — Data Analysis (Business insights): brand benchmarking, price-segment analysis, and review-text mining</b>
+            <b>Part 1 — Data Analysis (Business insights): brand benchmarking, price-segment analysis, and review-text mining.</b>
             <ul>
               <li>Worked with a large-scale dataset (~6.8M reviews, ~800k products, ~23k brands) to understand the jewelry market on Amazon.</li>
               <li>Cleaned and structured the data to analyze products, brands, prices, ratings, and review texts.</li>
               <li>Compared brand performances: </li>
                 <ul>
                   <li>Aggregated product ratings for each brand, used a weighted score to avoid bias from products with very few reviews.</li>
-                  <li>Ranked ~11k+ brands based on both rating quality and review volume.</li>
+                  <li>Ranked ~11k+ brands based on both rating and review volume.</li>
                 </ul>
               <li>Analyzed how brands perform over time (2004–2023): </li>
               <ul>
-                <li>Observed how top brands change over time.</li>
                 <li>Followed the evolution of large brands (e.g. Amazon Collection) in terms of rating and popularity. </li>
               </ul>
               <li>Explored price behaviour:</li>
@@ -571,12 +570,10 @@
               </ul>
               <li>Investigated relationship between price and satisfaction:</li>
               <ul>
-                <li>Tested whether expensive brands are actually better rated.</li>
-                <li>Built different versions of a “value for money” score (including log and z-score normalization).</li>
+                <li>Built different versions of a “value for money” scores.</li>
               </ul>
               <li>Performed review text analysis (NLP):</li>
               <ul>
-                <li>Processed reviews (tokenization, stopwords, normalization).</li>
                 <li>Generated word distributions and word clouds.</li>
                 <li>Tracked word trends over time and across brands.</li>
                 <li>Compared how often specific keywords appear across price segments.</li>
@@ -591,12 +588,15 @@
               </ul>
               <li>Customer complaints follow clear patterns across price segments:</li>
                 <ul>
-                  <li>“Quality problems” are more common in cheap products.</li>
-                  <li>Some issues (like defects) appear more evenly across segments.</li>
-                  <li>Cheap products struggle more with quality/durability but expectation mismatch exists in all price levels.</li>
+                  <li>“Quality problems” are far less common in luxury products</li>
+                  <li>On the other hand, size-related complaints are more noticeable in luxury items.</li>
+                  <li>Complaint patterns reveal a gap between quality and customer expectations. Cheaper products tend to have more physical failures (e.g., broken, defects). Luxury products, on the other hand, more often show subjective customer dissatisfaction (e.g., cheaply made) or focus more on value for money and expectations. As a result, customers tend to judge luxury items more critically.</li>
                 </ul>
-              <li>People mention price and affordability much more in cheaper products, while it comes up less for higher-priced items. It shows that customers focus more on cost in the low-price segment.</li>
-              <li>Brand rankings are highly dynamic over time. Top-ranked brands change frequently.</li>
+              <li>Luxury reviews emphasize value-for-money discussions, while cheap product reviews emphasize affordability, showing that price plays a different psychological role across segments.</li>
+              <li>Brand rankings are highly dynamic over time. Top-ranked brands change frequently. Market competition increases over time with more brands entering.</li>
+              <ul>
+                <li>Certain brands show exceptionally high association with specific complaints in a price segment (e.g., up to ~65–78% of reviews mentioning breakage in cheap products). This reveals significant quality differences within the same price segment. </li>
+              </ul>
               </ul>
               <li>If you want to see the full analysis, code, and visualizations, you can check my GitHub.</li>
               <!-- <li>Explored the dataset to understand the types of jewelry products, review patterns, and overall rating behavior.</li>
