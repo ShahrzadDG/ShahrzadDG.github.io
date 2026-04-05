@@ -612,17 +612,33 @@
             </ul>
           </li>
       
-          <!-- <li>
-            <b>Part 2 — Data Science & AI (NLP):</b>
+          <li>
+            <b>Part 2 — Data Science part: NLP & Transformer-based insight generation:</b>
             <ul>
-              <li>Built a transformer-based model to classify customer reviews as positive, neutral, or negative.</li>
-              <li>Applied topic modeling to uncover the main themes customers discuss in both positive and negative reviews.</li>
-              <li>Used a LLM model to summarize large sets of reviews into insights.</li>
-              <li>Analyzed sentiment for specific product aspects such as durability, design, and size.</li>
-              <li>Developed models to estimate a product’s potential success using early reviews and product metadata.</li>
-              <li>Explored NLP methods to detect suspicious or potentially fake reviews.</li>
+              <li>Sentiment Classification: Built a transformer-based model to classify customer reviews as positive, neutral, or negative.</li>
+              <ul>
+                <li>Cleaned missing/invalid entries, generated sentiment labels from ratings, handled dataset imbalance (dominant positive class) using Stratified data splitting and Macro-averaged evaluation metrics (F1, precision, recall)</li>
+                <li>Fine-tuned DistilBERT and RoBERTa models using the Hugging Face Transformers framework</li>
+                <li>Evaluated performance using Accuracy, precision, recall, macro F1-score, Confusion matrices and ROC curves, and Confidence score analysis</li>
+                <li>Accuracy ≈ 93% on test data, Macro F1 ≈ 0.79–0.80 (more reliable due to class imbalance), strong performance on positive and negative classes, neutral class remains the main challenge due to inherent ambiguity in neutral sentiment, class imbalance (few neutral samples), and label noise (ratings ≠ true sentiment)</li>
+              </ul>
+              <li>Results:</li>
+              <ul>
+                <li>DistilBERT is more efficient, faster, strong baseline</li>D
+                <li>RoBERTa is slightly better for nuanced/neutral sentiment, but higher cost</li>
+                <li>Trade-off between performance vs. computational efficiency: Increasing model complexity did not significantly improve performance on the neutral class. </li>
+                <li>The main bottleneck is data quality, not model capacity. </li>
+              </ul>
+              <li>In Progress:</li>
+              <ul>
+                <li>Appying topic modeling to uncover the main themes customers discuss in both positive and negative reviews.</li>
+                <li>Using a LLM model to summarize large sets of reviews into insights.</li>
+                <li>Analysing sentiment for specific product aspects such as durability, design, and size.</li>
+                <li>Developing models to estimate a product’s potential success using early reviews and product metadata.</li>
+                <li>Exploring NLP methods to detect suspicious or potentially fake reviews.</li>
+              </ul>
             </ul>
-          </li> -->
+          </li>
       <!-- 
           <li><b>Methods:</b> </li>
           <li><b>Results:</b> </li> -->
