@@ -602,7 +602,6 @@
                 <li>Certain brands show exceptionally high association with specific complaints in a price segment (e.g., up to ~65–78% of reviews mentioning breakage in cheap products). This reveals significant quality differences within the same price segment. </li>
               </ul>
               </ul>
-              <li>If you want to see the full analysis, code, and visualizations, you can check my GitHub.</li>
               <!-- <li>Explored the dataset to understand the types of jewelry products, review patterns, and overall rating behavior.</li>
               <li>Compared jewelry brands based on review counts, average ratings, and overall customer satisfaction.</li>
               <li>Analyzed how ratings are distributed across products and how customer sentiment changes across reviews.</li>
@@ -613,20 +612,22 @@
           </li>
       
           <li>
-            <b>Part 2 — Data Science part: NLP & Transformer-based insight generation:</b>
+            <b>Part 2 — Data Science: NLP & Transformer-based insight generation:</b>
             <ul>
-              <li>Sentiment Classification: Built a transformer-based model to classify customer reviews as positive, neutral, or negative.</li>
+              <li>Sentiment Classification: built a transformer-based model to classify customer reviews as positive, neutral, or negative.</li>
               <ul>
-                <li>Cleaned missing/invalid entries, generated sentiment labels from ratings, handled dataset imbalance (dominant positive class) using Stratified data splitting and Macro-averaged evaluation metrics (F1, precision, recall)</li>
-                <li>Fine-tuned DistilBERT and RoBERTa models using the Hugging Face Transformers framework</li>
-                <li>Evaluated performance using Accuracy, precision, recall, macro F1-score, Confusion matrices and ROC curves, and Confidence score analysis</li>
-                <li>Accuracy ≈ 93% on test data, Macro F1 ≈ 0.79–0.80 (more reliable due to class imbalance), strong performance on positive and negative classes, neutral class remains the main challenge due to inherent ambiguity in neutral sentiment, class imbalance (few neutral samples), and label noise (ratings ≠ true sentiment)</li>
+                <li>Cleaned missing/invalid entries, generated sentiment labels from ratings, handled dataset imbalance (dominant positive class) using stratified data splitting and Macro-averaged evaluation metrics (F1, precision, recall). </li>
+                <li>Fine-tuned DistilBERT and RoBERTa models using the Hugging Face Transformers framework.</li>
+                <li>Evaluated performance using accuracy, precision, recall, macro F1-score, confusion matrices and ROC curves, and confidence score analysis.</li>
+                <ul>
+                  <li>For both models accuracy ≈ 93% on test data, Macro F1 ≈ 0.79–0.80 (more reliable due to class imbalance), strong performance on positive and negative classes, neutral class remains the main challenge due to inherent ambiguity in neutral sentiment, class imbalance (few neutral samples), and label noise (ratings ≠ true sentiment). </li>
+                </ul?
               </ul>
               <li>Results:</li>
               <ul>
-                <li>DistilBERT is more efficient, faster, strong baseline</li>D
-                <li>RoBERTa is slightly better for nuanced/neutral sentiment, but higher cost</li>
-                <li>Trade-off between performance vs. computational efficiency: Increasing model complexity did not significantly improve performance on the neutral class. </li>
+                <li>DistilBERT is more efficient and faster baseline.</li>
+                <li>RoBERTa is slightly better for nuanced/neutral sentiment, but at higher cost.</li>
+                <li>Trade-off between performance vs. computational efficiency: increasing model complexity did not significantly improve performance on the neutral class. </li>
                 <li>The main bottleneck is data quality, not model capacity. </li>
               </ul>
               <li>In Progress:</li>
@@ -637,8 +638,10 @@
                 <li>Developing models to estimate a product’s potential success using early reviews and product metadata.</li>
                 <li>Exploring NLP methods to detect suspicious or potentially fake reviews.</li>
               </ul>
+              <li>If you want to see the full analysis, code, and visualizations, you can check my GitHub.</li>
             </ul>
           </li>
+          
       <!-- 
           <li><b>Methods:</b> </li>
           <li><b>Results:</b> </li> -->
