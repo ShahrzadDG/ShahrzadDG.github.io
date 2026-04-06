@@ -616,7 +616,7 @@
             <ul>
               <li>Sentiment Classification: built a transformer-based model to classify customer reviews as positive, neutral, or negative.</li>
               <ul>
-                <li>Cleaned missing/invalid entries, generated sentiment labels from ratings, handled dataset imbalance (dominant positive class) using stratified data splitting and Macro-averaged evaluation metrics (F1, precision, recall). </li>
+                <li>Cleaned missing/invalid entries, derived sentiment labels from rating scores, addressed class imbalance (dominant positive class) during evaluation using macro-averaged metrics and stratified splitting to preserve class distributions. </li>
                 <li>Fine-tuned DistilBERT and RoBERTa models using the Hugging Face Transformers framework.</li>
                 <li>Evaluated performance using accuracy, precision, recall, macro F1-score, confusion matrices, ROC curves, and confidence score analysis.</li>
                 <ul>
@@ -626,15 +626,16 @@
               </ul>
               <li>Results:</li>
               <ul>
-                <li>DistilBERT is more efficient and a faster baseline.</li>
-                <li>RoBERTa is slightly better for nuanced/neutral sentiment, but at a higher cost.</li>
-                <li>Trade-off between performance vs. computational efficiency: increasing model complexity (RoBERTa) did not significantly improve performance on the neutral class. </li>
-                <li>The main bottleneck is data quality, not model capacity. </li>
+                <li>DistilBERT is more efficient and a faster baseline model.</li>
+                <li>RoBERTa shows a slightly better performance for nuanced/neutral sentiment classification, but at a higher computational cost.</li>
+                <li>There is a clear trade-off between performance and computational efficiency: increasing model capacity (DistilBERT → RoBERTa) results in only marginal improvements in performance on the neutral class. Specifically, RoBERTa improves neutral recall and F1-score, indicating better detection of neutral samples.</li>
+                <li>This improvement suggests that RoBERTa is better at identifying neutral reviews, meaning it misses fewer neutral samples. However, this comes at the cost of slightly lower precision, indicating that it more often incorrectly labels non-neutral reviews as neutral.</li>
+                <li>Overall, the results suggest that the main bottleneck is data quality (e.g., label noise from rating scores and class imbalance), rather than model capacity.</li>
               </ul>
               <li>In Progress:</li>
               <ul>
                 <li>Appying topic modeling to uncover the main themes customers discuss in both positive and negative reviews.</li>
-                <li>Using a LLM model to summarize large sets of reviews into insights.</li>
+                <li>Using a large language model (LLM) model to summarize large sets of reviews into insights.</li>
                 <li>Analysing sentiment for specific product aspects such as durability, design, and size.</li>
                 <li>Developing models to estimate a product’s potential success using early reviews and product metadata.</li>
                 <li>Exploring NLP methods to detect suspicious or potentially fake reviews.</li>
