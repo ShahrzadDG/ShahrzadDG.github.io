@@ -618,16 +618,17 @@
               <ul>
                 <li>Cleaned missing/invalid entries, generated sentiment labels from ratings, handled dataset imbalance (dominant positive class) using stratified data splitting and Macro-averaged evaluation metrics (F1, precision, recall). </li>
                 <li>Fine-tuned DistilBERT and RoBERTa models using the Hugging Face Transformers framework.</li>
-                <li>Evaluated performance using accuracy, precision, recall, macro F1-score, confusion matrices and ROC curves, and confidence score analysis.</li>
+                <li>Evaluated performance using accuracy, precision, recall, macro F1-score, confusion matrices, ROC curves, and confidence score analysis.</li>
                 <ul>
-                  <li>For both models accuracy ≈ 93% on test data, Macro F1 ≈ 0.79–0.80 (more reliable due to class imbalance), strong performance on positive and negative classes, neutral class remains the main challenge due to inherent ambiguity in neutral sentiment, class imbalance (few neutral samples), and label noise (ratings ≠ true sentiment). </li>
+                  <li>For both models, the accuracy is ≈ 93% on test data, Macro F1 is ≈ 0.79–0.80 (more reliable due to class imbalance).</li>
+                  <li>Both models show a strong performance on positive and negative classes, but the neutral class remains the main challenge due to inherent ambiguity in neutral sentiment, class imbalance (fewer neutral samples), and label noise (ratings ≠ true sentiment). </li>
                 </ul>
               </ul>
               <li>Results:</li>
               <ul>
-                <li>DistilBERT is more efficient and faster baseline.</li>
-                <li>RoBERTa is slightly better for nuanced/neutral sentiment, but at higher cost.</li>
-                <li>Trade-off between performance vs. computational efficiency: increasing model complexity did not significantly improve performance on the neutral class. </li>
+                <li>DistilBERT is more efficient and a faster baseline.</li>
+                <li>RoBERTa is slightly better for nuanced/neutral sentiment, but at a higher cost.</li>
+                <li>Trade-off between performance vs. computational efficiency: increasing model complexity (RoBERTa) did not significantly improve performance on the neutral class. </li>
                 <li>The main bottleneck is data quality, not model capacity. </li>
               </ul>
               <li>In Progress:</li>
@@ -639,7 +640,7 @@
                 <li>Exploring NLP methods to detect suspicious or potentially fake reviews.</li>
               </ul>
             </ul>
-            <li>If you want to see the full analysis, code, and visualizations, you can check my GitHub.</li>
+            <li>If you would like to see the full analysis, code, and visualizations, you can check my GitHub.</li>
           </li>
           
       <!-- 
