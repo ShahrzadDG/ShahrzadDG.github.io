@@ -585,10 +585,10 @@
               </ul>
               <li>Quantified how different types of customer complaints (durability, size/fit, appearance, and color) impact product ratings.</li>
               <ul>
-                <li>Processed review texts to identify specific complaint types using keyword-based pattern matching, including durability, size/fit, appearance, and color related issues.</li>
+                <!-- <li>Processed review texts to identify specific complaint types using keyword-based pattern matching, including durability, size/fit, appearance, and color related issues.</li> -->
                 <li>Built a multiple linear regression model to quantify the relationship between complaint types and product ratings.</li>
                 <li>Extended the analysis by comparing the relative impact of different complaint types to determine which issues most strongly drive customer dissatisfaction.</li>
-                <li>Performed segmented analysis across price categories (cheap / mid / luxury) to evaluate how the importance of complaint types varies across different price segments.</li>
+                <li>Performed analysis across price segments (cheap / mid / luxury) to evaluate how the importance of complaint types varies across different price segments.</li>
               </ul>
               
               <li><b>Part of the results:</b></li>
@@ -610,20 +610,20 @@
                 <li>Certain brands show exceptionally high association with specific complaints in a price segment (e.g., up to ~65–78% of reviews mentioning breakage in cheap products). This reveals significant quality differences within the same price segment. </li>
               </ul>
 
+              
+              <li>Durability, compared with  appearance or fit issues, is the most important driver of customer satisfaction overall.</li>
               <ul>
-                <li>Durability, compared with  appearance or fit issues, is the most important driver of customer satisfaction overall.</li>
-                <ul>
-                  <li>Reducing durability related complaints by 10% is associated with an increase of ~0.28 stars in product ratings, which is the most effective way to improve customer satisfaction.</li>
-                  <li>Addressing size, appearance, and color related issues can improve ratings by ~ 0.15–0.16 stars per 10% reduction in complaints, making them secondary but still important drivers of customer satisfaction.</li>
-                </ul>
-                <li>Customer priorities vary across price segments:</li>
-                <ul>
-                  <li>In cheap products, durability clearly dominates, with the largest impact on ratings, significantly stronger than other complaint types.</li>
-                  <li>In mid-priced products, both durability and appearance have strong and similar effects, indicating that customers care about both functionality and how the product looks. Size and color issues have a noticeably smaller impact in this segment.</li>
-                  <li>This shows that customer expectations increase with price: from basic better durability expectations in cheap products to a combination of performance and appearance in mid-range products.</li>
-                  <li>For luxury products, no reliable conclusions can be drawn due to the very small number of available items.</li>
-                </ul>
-              </ul>  
+                <li>Reducing durability related complaints by 10% is associated with an increase of ~0.28 stars in product ratings.</li>
+                <li>Addressing size, appearance, and color related issues can improve ratings by ~ 0.15–0.16 stars per 10% reduction in complaints, making them secondary but still important drivers of customer satisfaction.</li>
+              </ul>
+              <li>Customer priorities vary across price segments:</li>
+              <ul>
+                <li>In cheap products, durability has the largest impact on ratings.</li>
+                <li>In mid-priced products, both durability and appearance have strong and similar effects. Size and color issues have a noticeably smaller impact in this segment.</li>
+                <li>This shows that customer expectations increase with price: from basic better durability expectations in cheap products to a combination of performance and appearance in mid-range products.</li>
+                <li>For luxury products, no reliable conclusions can be drawn due to the very small number of available items.</li>
+              </ul>
+            
               </ul>
               <!-- <li>Explored the dataset to understand the types of jewelry products, review patterns, and overall rating behavior.</li>
               <li>Compared jewelry brands based on review counts, average ratings, and overall customer satisfaction.</li>
