@@ -554,10 +554,11 @@
             <b>Goal:</b> Analyzing Amazon jewelry reviews to uncover customer satisfaction drivers, brands performances, and product issues using both data analytics and NLP/LLM techniques.
           </li>
           <li>
-            <b>Part 1 — Data Analysis (Business insights): brand benchmarking, price-segment analysis, and review-text mining.</b>
+            <b>Part 1 — Data Analysis (Business insights): brand benchmarking, price-segment analysis, and review-text mining, & KPI definition.</b>
             <ul>
-              <li>Worked with a large-scale dataset (~6.8M reviews, ~800k products, ~23k brands) to understand the jewelry market on Amazon.</li>
+              <li>Worked with a large-scale dataset (~6.8M reviews, ~800k products, ~23k brands) to understand the jewelry market on Amazon (2004-2023).</li>
               <li>Cleaned and structured the data to analyze products, brands, prices, ratings, and review texts.</li>
+              <li>Defined and computed key performance indicators (KPIs) to benchmark brand satisfaction, complaint severity, and value-for-money across price segments.</li>
               <li>Compared brand performances: </li>
                 <ul>
                   <li>Aggregated product ratings for each brand, used a weighted score to avoid bias from products with very few reviews.</li>
@@ -565,40 +566,43 @@
                 </ul>
               <li>Analyzed how brands perform over time (2004–2023): </li>
               <ul>
-                <li>Followed the evolution of large brands (e.g. Amazon Collection) in terms of rating and popularity. </li>
+                <li>Tracked the evolution of large brands (e.g. Amazon Collection) in terms of rating and popularity. </li>
+                <li>Found that brand rankings are highly dynamic. Top-ranked brands change frequently, and market competition increases over time as more brands enter.</li>
               </ul>
               <li>Explored price behaviour:</li>
               <ul>
                 <li>Analyzed full price distribution (highly skewed, long tail up to ~33k $).</li> 
-                <li>Segmented products into cheap / mid / luxury.</li>
+                <li>Segmented products into cheap / mid / luxury. It reveals strong market concentration: ~96% of products fall in the cheap segment.</li>
               </ul>
               <li>Investigated relationship between price and satisfaction:</li>
               <ul>
-                <li>Built different versions of a “value for money” scores.</li>
+                <li>Built different versions of a “value for money” scores (raw rating/price and z-score normalization) to identify which brands offer the best perceived value within each price segment.</li>
               </ul>
               <li>Performed review text analysis (NLP):</li>
               <ul>
-                <li>Generated word distributions and word clouds.</li>
+                <li>Built a full text preprocessing pipeline: lowercasing, contraction expansion, lemmatization, and custom stopword removal.</li>
+                <li>Generated word distributions, word clouds, and bigram analysis to identify the most common themes in customer language.</li>
                 <li>Tracked word trends over time and across brands.</li>
                 <li>Compared how often specific keywords appear across price segments.</li>
                 <li>Identified which brands are most associated with specific words concerning complaints/praises for products in a specific price segment.</li>
               </ul>
-              <li>Quantified how different types of customer complaints (durability, size/fit, appearance, and color) impact product ratings.</li>
+              <li>Quantified how different types of customer complaints (durability, size/fit, appearance, and color) impact product ratings using regression modelling.</li>
               <ul>
-                <!-- <li>Processed review texts to identify specific complaint types using keyword-based pattern matching, including durability, size/fit, appearance, and color related issues.</li> -->
-                <li>Built a multiple linear regression model to quantify the relationship between complaint types and product ratings.</li>
-                <li>Extended the analysis by comparing the relative impact of different complaint types to determine which issues most strongly drive customer dissatisfaction.</li>
+                <li>Detected four complaint categories, durability, size/fit, appearance, and color, from review text using regex-based keyword pattern matching.</li>
+                <li>Checked for multicollinearity between complaint flags using Variance Inflation Factor (VIF) before model fitting.</li>
+                <li>Built a multiple linear regression model (OLS regression models (statsmodels)) to quantify the relationship between complaint types and product ratings to determine which issues most strongly drive customer dissatisfaction..</li>
+                <li>Provided regression diagnostics including residual plots, Q-Q plots, and scale-location charts to validate model assumptions.</li>
                 <li>Performed analysis across price segments (cheap / mid / luxury) to evaluate how the importance of complaint types varies across different price segments.</li>
               </ul>
               
               <li><b>Part of the results:</b></li>
               <ul>
-              <li>Higher price does not consistently lead to higher ratings. </li>
+              <li>Higher price does not consistently lead to higher ratings.</li>
               <ul>
                 <li>When comparing average ratings across price segments over time, expensive products are not clearly better rated than cheaper ones.</li>
                 <li>Customer satisfaction seems to depend more on expectations and perceived value than on price itself.</li>  
               </ul>
-              <li>Customer complaints follow clear patterns across price segments:</li>
+              <li>Customer complaints differ systematically across price segments:</li>
                 <ul>
                   <li>“Quality problems” are far less common in luxury products</li>
                   <li>On the other hand, size-related complaints are more noticeable in luxury items.</li>
@@ -609,17 +613,15 @@
               <ul>
                 <li>Certain brands show exceptionally high association with specific complaints in a price segment (e.g., up to ~65–78% of reviews mentioning breakage in cheap products). This reveals significant quality differences within the same price segment. </li>
               </ul>
-
-              
               <li>Durability, compared with  appearance or fit issues, is the most important driver of customer satisfaction overall.</li>
               <ul>
-                <li>Reducing durability related complaints by 10% is associated with an increase of ~0.28 stars in product ratings.</li>
-                <li>Addressing size, appearance, and color related issues can improve ratings by ~ 0.15–0.16 stars per 10% reduction in complaints, making them secondary but still important drivers of customer satisfaction.</li>
+                <li>Reducing durability related complaints by 10% is associated with an increase of ~0.31 and ~33 stars in rating of cheap products and mid-price products, respectively. All results are statistically significant (p &lt; 0.001), with models explaining 35.2% and 41.6% of rating variance in the cheap and mid segments respectively (R² = 0.352 and 0.416).</li>
+                <!-- <li>Addressing size, appearance, and color related issues can improve ratings by ~ 0.15–0.16 stars per 10% reduction in complaints, making them secondary but still important drivers of customer satisfaction.</li> -->
               </ul>
               <li>Customer priorities vary across price segments:</li>
               <ul>
-                <li>In cheap products, durability has the largest impact on ratings.</li>
-                <li>In mid-priced products, both durability and appearance have strong and similar effects. Size and color issues have a noticeably smaller impact in this segment.</li>
+                <li>In cheap products, durability has the largest impact on ratings (−0.31 stars per 10% increase), followed by appearance (−0.27) and size (−0.21).</li>
+                <li>In mid-priced products, appearance overtakes durability as the strongest predictor (−0.35 vs −0.33 stars per 10% increase). Color complaints show no statistically significant effect (p = 0.53).</li>
                 <li>This shows that customer expectations rise and shift with price: from a focus on durability in cheap products to a combination of durability and appearance in mid-priced products.</li>
                 <li>For luxury products, no reliable conclusions can be drawn due to the very small number of available items.</li>
               </ul>
