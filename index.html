@@ -729,7 +729,6 @@
       </div> -->
   </section>
 
-    <!-- ===================== KAGGLE COMPETITIONS ===================== -->
     <section class="card" id="kaggle">
       <div class="section-title">
         <h2>Kaggle Competitions</h2>
@@ -739,15 +738,12 @@
       <p class="meta" style="margin: 0 0 14px; font-size: 13px; line-height: 1.7;">
         I use Kaggle competitions to practise end-to-end machine learning on new problems, with a focus on
         rigorous validation, reproducible pipelines, and honest reporting of how well models generalise.
-        <!-- TODO: replace with your Kaggle profile URL -->
         🔗 <a href="https://www.kaggle.com/shahrzaddg" target="_blank" rel="noreferrer">Kaggle profile</a>
       </p>
 
       <div class="list">
 
-        <!-- New competitions go here, above Titanic (strongest results first). Copy the template at the end of this section. -->
 
-        <!-- ===== Titanic ===== -->
         <div class="item">
           <h3>Titanic: Machine Learning from Disaster: Survival Prediction Benchmark</h3>
           <p class="meta">Binary classification • Tabular data • Python, scikit-learn, Optuna, XGBoost, LightGBM, CatBoost • 10.2026</p>
@@ -759,20 +755,19 @@
           </div>
 
           <ul>
-            <li class="long"><b>Goal:</b> Predict passenger survival and compare a wide range of classifiers
-              with a validation setup that gives an honest estimate of performance on unseen data.</li>
+            <li class="long"><b>Goal:</b> Predict passenger survival.</li>
             <li class="long"><b>Method:</b>
               <ul>
                 <li>Exploratory analysis of how sex, ticket class, age, fare, and family size relate to survival.</li>
                 <li>Feature engineering (family size, travelling alone, passenger titles extracted from names), built into scikit-learn pipelines so preprocessing is fitted only on training folds (no data leakage).</li>
-                <li>Benchmarked 10 classical models (Logistic Regression, KNN, Decision Tree, Random Forest, Extra Trees, SVM, Gradient Boosting, XGBoost, LightGBM, CatBoost) against majority-class and sex-only baselines.</li>
+                <li>Benchmarked 10 classical models (Logistic Regression, KNN, Decision Tree, Random Forest, Extra Trees, SVM, Gradient Boosting, XGBoost, LightGBM, CatBoost).</li>
                 <li>Hyperparameter tuning with GridSearchCV and Optuna, followed by nested cross-validation to remove the optimistic bias of tuning and evaluating on the same folds.</li>
                 <li>Built a soft-voting ensemble (Random Forest + LightGBM + CatBoost) and compared it with a tuned multilayer perceptron (MLP).</li>
               </ul>
             </li>
             <li class="long"><b>Results:</b>
               <ul>
-                <li>Tree-based models performed best. Nested cross-validation gave about 0.83 ± 0.03 accuracy, compared with about 0.85 from standard tuned cross-validation, which showed how much tuning inflates scores.</li>
+                <li>Tree-based models performed best. Nested cross-validation gave about 0.83 ± 0.03 accuracy.</li>
                 <li>The soft-voting ensemble scored 0.7751 on the public leaderboard and the tuned MLP 0.7727. The public test split contains only about 209 passengers, so one passenger changes accuracy by about 0.5 percentage points, and the difference between the models is within noise.</li>
                 <li>A neural network did not outperform the tree ensembles on this small tabular dataset (891 training samples).</li>
               </ul>
