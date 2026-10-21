@@ -556,7 +556,7 @@
           🔗 <a href="#" target="_blank" rel="noreferrer">Repository (coming soon)</a>
         </p> -->
       </div>
-
+<!-- 
       <div class="item">
         <h3>Mining insights from Amazon Jewelry Reviews</h3>
         <p class="meta">From business analytics to LLM-driven insight generation • Python & PowerBI • Independent Project</p>
@@ -628,7 +628,7 @@
               <ul>
                 <li>Reducing durability related complaints by 10% is associated with an increase of ~0.31 and ~33 stars in rating of cheap products and mid-price products, respectively. All results are statistically significant (p &lt; 0.001), with models explaining 35.2% and 41.6% of rating variance in the cheap and mid segments respectively (R² = 0.352 and 0.416).</li>
                 <!-- <li>Addressing size, appearance, and color related issues can improve ratings by ~ 0.15–0.16 stars per 10% reduction in complaints, making them secondary but still important drivers of customer satisfaction.</li> -->
-              </ul>
+              <!-- </ul>
               <li>Customer priorities vary across price segments:</li>
               <ul>
                 <li>In cheap products, durability has the largest impact on ratings (−0.31 stars per 10% increase), followed by appearance (−0.27) and size (−0.21).</li>
@@ -637,14 +637,14 @@
                 <li>For luxury products, no reliable conclusions can be drawn due to the very small number of available items.</li>
               </ul>
             
-              </ul>
+              </ul> -->
               <!-- <li>Explored the dataset to understand the types of jewelry products, review patterns, and overall rating behavior.</li>
               <li>Compared jewelry brands based on review counts, average ratings, and overall customer satisfaction.</li>
               <li>Analyzed how ratings are distributed across products and how customer sentiment changes across reviews.</li>
               <!-- <li>Examined review texts to identify common words and phrases customers use when describing positive and negative experiences.</li> -->
               <!-- <li>Identified the product aspects customers complain about most, as well as the features they appreciate the most.</li>
               <li>Compared different jewelry brands and product types to understand which ones receive the most positive feedback.</li> --> 
-
+<!-- 
               <li><b>An interactive Power BI dashboard to analyze Amazon jewelry marketplace trends, customer ratings, pricing behavior, and brand performance:</b></li>
               <ul>
                 <li>Built a complete data processing pipeline in Python to clean, transform, and aggregate large-scale Parquet datasets for business intelligence reporting.</li>
@@ -655,8 +655,8 @@
                   🔗 <a href="https://github.com/ShahrzadDG/Amazon-jewelry-customer-insights/tree/main/Data%20analysis/Power%20BI" target="_blank" rel="noreferrer">PowerBI dashboard</a>
                   &nbsp; 
                 </p>
-              
-              
+               -->
+              <!-- 
             </ul>
           </li>
       
@@ -672,8 +672,8 @@
                   <li>For both models, the accuracy is ≈ 93% on test data, Macro F1 is ≈ 0.79–0.80 (more reliable due to class imbalance).</li>
                   <li>Both models show a strong performance on positive and negative classes, but the neutral class remains the main challenge due to inherent ambiguity in neutral sentiment, class imbalance (fewer neutral samples), and label noise (ratings ≠ true sentiment). </li>
                 </ul>
-              </ul>
-              <li>Results:</li>
+              </ul> -->
+              <!-- <li>Results:</li>
               <ul>
                 <li>DistilBERT is more efficient and a faster baseline model.</li>
                 <li>RoBERTa shows a slightly better performance for nuanced/neutral sentiment classification, but at a higher computational cost.</li>
@@ -691,12 +691,12 @@
               </ul>
             </ul>
             <li>If you would like to see the full analysis, code, and visualizations, you can check my GitHub.</li>
-          </li>
+          </li> -->
           
       <!-- 
           <li><b>Methods:</b> </li>
           <li><b>Results:</b> </li> -->
-        <p class="meta" style="margin-top:10px;">
+        <!-- <p class="meta" style="margin-top:10px;">
           🔗 <a href="https://github.com/ShahrzadDG/Amazon-jewelry-customer-insights" target="_blank" rel="noreferrer">Repository</a>
           &nbsp; 
         </p>
@@ -704,7 +704,7 @@
         <!-- <p class="meta" style="margin-top:10px;">
           🔗 <a href="#" target="_blank" rel="noreferrer">Repository (coming soon)</a>
         </p> -->
-      </div>
+      <!-- </div>  -->
       <!--
       <div class="item">
         <h3>Autoencoder Denoising for Reflection Data</h3>
@@ -727,7 +727,194 @@
         <p class="meta" style="margin-top:10px;">
           🔗 <a href="#" target="_blank" rel="noreferrer">Repository (optional)</a>
         </p>
-      </div> -->
+      </div> --> 
+
+
+<div class="item">
+  <h3>Mining insights from Amazon Jewelry Reviews</h3>
+  <p class="meta">From business analytics to LLM-driven insight generation • Python & PowerBI • Independent Project</p>
+
+  <ul>
+    <li>
+      <b>Goal:</b> Analyzing Amazon jewelry reviews to uncover customer satisfaction drivers, brands performances, and product issues using both data analytics and NLP/LLM techniques.
+    </li>
+
+    <li>
+      <b>Part 1 — Data Analysis (Business insights): brand benchmarking, price-segment analysis, review-text mining, and KPI development.</b>
+      <ul>
+        <li>Worked with a large-scale dataset (~6.8M reviews, ~800k products, ~23k brands) to understand the jewelry market on Amazon (2004-2023).</li>
+        <li>Cleaned and structured the data to analyze products, brands, prices, ratings, and review texts.</li>
+        <li>Defined and computed key performance indicators (KPIs) to benchmark brand satisfaction, complaint severity, and value-for-money across price segments.</li>
+
+        <li>
+          Compared brand performances:
+          <ul>
+            <li>Aggregated product ratings for each brand, used a weighted score to avoid bias from products with very few reviews.</li>
+            <li>Ranked ~11k+ brands based on both rating and review volume.</li>
+          </ul>
+        </li>
+
+        <li>
+          Analyzed how brands perform over time (2004–2023):
+          <ul>
+            <li>Tracked the evolution of large brands (e.g. Amazon Collection) in terms of rating and popularity.</li>
+            <li>Found that brand rankings are highly dynamic. Top-ranked brands change frequently, and market competition increases over time as more brands enter.</li>
+          </ul>
+        </li>
+
+        <li>
+          Explored price behaviour:
+          <ul>
+            <li>Analyzed full price distribution (highly skewed, long tail up to ~33k $).</li>
+            <li>Segmented products into cheap / mid / luxury. It reveals strong market concentration: ~96% of products fall in the cheap segment.</li>
+          </ul>
+        </li>
+
+        <li>
+          Investigated relationship between price and satisfaction:
+          <ul>
+            <li>Built different versions of a “value for money” scores (raw rating/price and z-score normalization) to identify which brands offer the best perceived value within each price segment.</li>
+          </ul>
+        </li>
+
+        <li>
+          Performed review text analysis (NLP):
+          <ul>
+            <li>Built a full text preprocessing pipeline: lowercasing, contraction expansion, lemmatization, and custom stopword removal.</li>
+            <li>Generated word distributions, word clouds, and bigram analysis to identify the most common themes in customer language.</li>
+            <li>Tracked word trends over time and across brands.</li>
+            <li>Compared how often specific keywords appear across price segments.</li>
+            <li>Identified which brands are most associated with specific words concerning complaints/praises for products in a specific price segment.</li>
+          </ul>
+        </li>
+
+        <li>
+          Quantified how different types of customer complaints (durability, size/fit, appearance, and color) impact product ratings using regression modelling.
+          <ul>
+            <li>Detected four complaint categories, durability, size/fit, appearance, and color, from review text using regex-based keyword pattern matching.</li>
+            <li>Checked for multicollinearity between complaint flags using Variance Inflation Factor (VIF) before model fitting.</li>
+            <li>Built a multiple linear regression model (OLS regression models (statsmodels)) to quantify the relationship between complaint types and product ratings to determine which issues most strongly drive customer dissatisfaction..</li>
+            <li>Provided regression diagnostics including residual plots, Q-Q plots, and scale-location charts to validate model assumptions.</li>
+            <li>Performed analysis across price segments (cheap / mid / luxury) to evaluate how the importance of complaint types varies across different price segments.</li>
+          </ul>
+        </li>
+
+        <li>
+          <b>Part of the results:</b>
+          <ul>
+            <li>
+              Higher price does not consistently lead to higher ratings.
+              <ul>
+                <li>When comparing average ratings across price segments over time, expensive products are not clearly better rated than cheaper ones.</li>
+                <li>Customer satisfaction seems to depend more on expectations and perceived value than on price itself.</li>
+              </ul>
+            </li>
+
+            <li>
+              Customer complaints differ systematically across price segments:
+              <ul>
+                <li>“Quality problems” are far less common in luxury products</li>
+                <li>On the other hand, size-related complaints are more noticeable in luxury items.</li>
+                <li>Luxury reviews emphasize value-for-money discussions, while cheap product reviews emphasize affordability, showing systematic differences in how price is discussed across segments.</li>
+                <li>Complaint patterns reveal a gap between quality and customer expectations. Cheaper products tend to have more physical failures (e.g., broken, defects). Luxury products, on the other hand, more often show subjective customer dissatisfaction (e.g., cheaply made) or focus more on value for money and expectations. In general, customers tend to judge luxury items more critically.</li>
+              </ul>
+            </li>
+
+            <li>
+              Brand rankings are highly dynamic over time. Top-ranked brands change frequently. Market competition increases over time with more brands entering.
+              <ul>
+                <li>Certain brands show exceptionally high association with specific complaints in a price segment (e.g., up to ~65–78% of reviews mentioning breakage in cheap products). This reveals significant quality differences within the same price segment.</li>
+              </ul>
+            </li>
+
+            <li>
+              Durability, compared with  appearance or fit issues, is the most important driver of customer satisfaction overall.
+              <ul>
+                <li>Reducing durability related complaints by 10% is associated with an increase of ~0.31 and ~33 stars in rating of cheap products and mid-price products, respectively. All results are statistically significant (p &lt; 0.001), with models explaining 35.2% and 41.6% of rating variance in the cheap and mid segments respectively (R² = 0.352 and 0.416).</li>
+              </ul>
+            </li>
+
+            <li>
+              Customer priorities vary across price segments:
+              <ul>
+                <li>In cheap products, durability has the largest impact on ratings (−0.31 stars per 10% increase), followed by appearance (−0.27) and size (−0.21).</li>
+                <li>In mid-priced products, appearance overtakes durability as the strongest predictor (−0.35 vs −0.33 stars per 10% increase). Color complaints show no statistically significant effect (p = 0.53).</li>
+                <li>This shows that customer expectations rise and shift with price: from a focus on durability in cheap products to a combination of durability and appearance in mid-priced products.</li>
+                <li>For luxury products, no reliable conclusions can be drawn due to the very small number of available items.</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <b>An interactive Power BI dashboard to analyze Amazon jewelry marketplace trends, customer ratings, pricing behavior, and brand performance:</b>
+          <ul>
+            <li>Built a complete data processing pipeline in Python to clean, transform, and aggregate large-scale Parquet datasets for business intelligence reporting.</li>
+            <li>Performed exploratory data analysis (EDA) to identify pricing trends, category distributions, outliers, and correlations between ratings, popularity, and product prices.</li>
+            <li>Designed KPI visualizations including median pricing evolution, category comparisons, and brand level customer engagement metrics.</li>
+          </ul>
+          <p class="meta" style="margin-top:10px;">
+            🔗 <a href="https://github.com/ShahrzadDG/Amazon-jewelry-customer-insights/tree/main/Data%20analysis/Power%20BI" target="_blank" rel="noreferrer">PowerBI dashboard</a>
+            &nbsp;
+          </p>
+        </li>
+      </ul>
+    </li>
+
+    <li>
+      <b>Part 2 — Data Science: NLP & Transformer-based insight generation:</b>
+      <ul>
+        <li>
+          Sentiment Classification: built a transformer-based model to classify customer reviews as positive, neutral, or negative.
+          <ul>
+            <li>Cleaned missing/invalid entries, derived sentiment labels from rating scores, addressed class imbalance (dominant positive class) during evaluation using macro-averaged metrics and stratified splitting to preserve class distributions.</li>
+            <li>Fine-tuned DistilBERT and RoBERTa models using the Hugging Face Transformers framework.</li>
+            <li>
+              Evaluated performance using accuracy, precision, recall, macro F1-score, confusion matrices, ROC curves, and confidence score analysis.
+              <ul>
+                <li>For both models, the accuracy is ≈ 93% on test data, Macro F1 is ≈ 0.79–0.80 (more reliable due to class imbalance).</li>
+                <li>Both models show a strong performance on positive and negative classes, but the neutral class remains the main challenge due to inherent ambiguity in neutral sentiment, class imbalance (fewer neutral samples), and label noise (ratings ≠ true sentiment).</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          Results:
+          <ul>
+            <li>DistilBERT is more efficient and a faster baseline model.</li>
+            <li>RoBERTa shows a slightly better performance for nuanced/neutral sentiment classification, but at a higher computational cost.</li>
+            <li>There is a clear trade-off between performance and computational efficiency: increasing model capacity (DistilBERT → RoBERTa) results in only marginal improvements in performance on the neutral class. Specifically, RoBERTa improves neutral recall and F1-score, indicating better detection of neutral samples.</li>
+            <li>This improvement suggests that RoBERTa is better at identifying neutral reviews, meaning it misses fewer neutral samples. However, this comes at the cost of slightly lower precision, indicating that it more often incorrectly labels non-neutral reviews as neutral.</li>
+            <li>Overall, the results suggest that the main bottleneck is data quality (e.g., label noise from rating scores and class imbalance), rather than model capacity.</li>
+          </ul>
+        </li>
+
+        <li>
+          In Progress:
+          <ul>
+            <li>Appying topic modeling to uncover the main themes customers discuss in both positive and negative reviews.</li>
+            <li>Using a large language model (LLM) model to summarize large sets of reviews into insights.</li>
+            <li>Analysing sentiment for specific product aspects such as durability, design, and size.</li>
+            <li>Developing models to estimate a product’s potential success using early reviews and product metadata.</li>
+            <li>Exploring NLP methods to detect suspicious or potentially fake reviews.</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+
+    <li>If you would like to see the full analysis, code, and visualizations, you can check my GitHub.</li>
+  </ul>
+
+  <p class="meta" style="margin-top:10px;">
+    🔗 <a href="https://github.com/ShahrzadDG/Amazon-jewelry-customer-insights" target="_blank" rel="noreferrer">Repository</a>
+    &nbsp;
+  </p>
+</div>
+
+
+
+      
   </section>
 
     <section class="card" id="kaggle">
