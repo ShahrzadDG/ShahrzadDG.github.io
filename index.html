@@ -914,6 +914,107 @@
 </div>
 
 
+<div class="item">
+  <h3>E-Commerce Delivery Analytics — End-to-End Data Engineering with Databricks</h3>
+  <p class="meta">Data Engineering & Business Analytics • Databricks, PySpark, SQL, Delta Lake, Unity Catalog • Independent Project • 10.2026</p>
+
+  <ul>
+    <li>
+      <b>Goal:</b> Developed an end-to-end data engineering and analytics pipeline using the Brazilian Olist E-Commerce dataset to evaluate delivery performance, identify late delivery patterns, and analyze regional and monthly differences in delivery efficiency.
+    </li>
+
+    <!-- <li>
+      <b>Outcome:</b> Built a structured Bronze–Silver–Gold data pipeline that transforms raw e-commerce data into reusable, analytics ready Delta tables for evaluating delivery performance and supporting business analysis.
+    </li> -->
+
+
+    <li>
+      <b>Data Engineering — Medallion Architecture (Bronze → Silver → Gold):</b>
+      <ul>
+        <li>
+          <b>Bronze Layer — Data Ingestion:</b>
+          <ul>
+            <li>Ingested raw e-commerce CSV datasets using Apache Spark/PySpark, including orders, customers, order items, products, and customer reviews.</li>
+            <li>Used Unity Catalog Volumes for source data storage and loaded the datasets into Delta Lake tables in Databricks.</li>
+            <li>Configured batch CSV ingestion using PySpark, including schema inference settings, multiline parsing, and PERMISSIVE mode for malformed records.</li>
+          </ul>
+        </li>
+    
+        <li>
+          <b>Silver Layer — Data Cleaning & Transformation:</b>
+          <ul>
+            <li>Performed data cleaning, type conversion, and transformation using PySpark DataFrame operations.</li>
+            <li>Integrated related datasets to create an enriched order level table for analysis.</li>
+            <li>Engineered delivery performance features, including delivery duration, delivery status, and late delivery indicators.</li>
+          </ul>
+        </li>
+    
+        <li>
+          <b>Gold Layer — Business Analytics:</b>
+          <ul>
+            <li>Developed analytics ready Delta tables using Spark SQL queries, aggregations, and KPI calculations.</li>
+            <li>Calculated delivery KPIs, including total delivered orders, late delivery percentages, average delivery duration, and customer review scores.</li>
+            <li>Created regional and monthly KPI tables to compare delivery performance across Brazilian states and purchase periods.</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+
+
+    <li>
+      <b>Results — Key Business Insights:</b>
+      <ul>
+        <li>
+          <b>Late deliveries are strongly associated with lower customer satisfaction:</b>
+          <ul>
+            <li>Analyzed 96,470 delivered orders, of which 7,826 (8.11%) arrived later than their estimated delivery date.</li>
+            <li>Orders delivered on time received an average customer review score of 4.29/5, compared with only 2.57/5 for late deliveries — a difference of 1.72 points.</li>
+            <li>Among reviewed orders, 53.99% of late deliveries received low ratings (≤ 2 stars), compared with only 9.19% of on-time deliveries. This shows there can be a strong association between delivery punctuality and customer satisfaction, without establishing causality.</li>
+          </ul>
+        </li>
+    
+        <li>
+          <b>Delivery performance varies substantially across Brazilian states:</b>
+          <ul>
+            <li>Alagoas (AL) had the highest observed late delivery rate at 23.93%, with an average delivery duration of 24.54 days, compared with the overall late delivery rate of 8.11% and average duration of 12.56 days.</li>
+            <li>Maranhão (MA) and Piauí (PI) also showed elevated late delivery rates of 19.67% and 15.97%, respectively.</li>
+            <li>São Paulo (SP) accounted for 40,494 delivered orders and 2,387 late deliveries, but its late delivery rate was only 5.89%. This highlights why both absolute delay counts and relative delay rates are important when identifying operational priorities.</li>
+          </ul>
+        </li>
+    
+        <li>
+          <b>Delivery delays were particularly high in February and March 2018:</b>
+          <ul>
+            <li>March 2018 had a late delivery rate of 21.36% across 7,003 delivered orders, more than 2.6 times the overall rate of 8.11%.</li>
+            <li>February 2018 also showed poor performance, with 15.99% late deliveries across 6,555 orders and an average delivery duration of 16.95 days.</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+
+
+    <!-- <li>
+      <b>Technical Skills Demonstrated:</b>
+      <ul>
+        <li>End-to-end batch data pipelines and ETL/ELT workflows.</li>
+        <li>Distributed data processing using Apache Spark/PySpark.</li>
+        <li>Data cleaning, transformation, and integration.</li>
+        <li>Delta Lake, Unity Catalog, and Lakehouse Architecture.</li>
+        <li>SQL aggregations, KPI development, and business analytics.</li>
+      </ul>
+    </li> -->
+
+
+  </ul>
+
+  <p class="meta" style="margin-top:10px;">
+    🔗 <a href="https://github.com/ShahrzadDG/Databricks-ecommerce-delivery-analytics" target="_blank" rel="noreferrer">Repository</a>
+  </p>
+</div>
+
+
+
+      
       
   </section>
 
